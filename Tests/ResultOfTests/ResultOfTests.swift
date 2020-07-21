@@ -2,14 +2,19 @@ import XCTest
 @testable import ResultOf
 
 final class ResultOfTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(ResultOf().text, "Hello, World!")
+    func testThatResultOfReturnsTheValueOfACustomClosure() {
+    
+        let someString = "Hello World!"
+        
+        let myValue = resultOf {
+            
+            return someString } as String
+        
+        XCTAssert(someString == myValue)
+        
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testThatResultOfReturnsTheValueOfACustomClosure", testThatResultOfReturnsTheValueOfACustomClosure),
     ]
 }
